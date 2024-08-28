@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div class="jumbotron mt-5 text-center bg-primary text-white">
+        <h1 class="display-4">Financial Data Overview</h1>
+        <p class="lead">Explore the financial data and create your own visualizations.</p>
+    </div>
+    <div class="card shadow-sm mb-5">
+        <div class="card-header bg-secondary text-white">
+            <h4 class="card-title">Dataset Preview</h4>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                {{ table | safe }}
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <a href="{{ url_for('create_graph') }}" class="btn btn-lg btn-success">Create Your Own Graph</a>
+    </div>
+{% endblock %}
